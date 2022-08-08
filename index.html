@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap/3/css/bootstrap.css" />
+ 
+<!-- Include Date Range Picker -->
+<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+    <title>Document</title>
+</head>
+<body>
+    
+<input  name="daterange" />
+
+<script>
+ var today = new Date();
+var defaultDateLimit = 10;
+var defaultPastDate = new Date(new Date().setDate(today.getDate() - defaultDateLimit));
+
+$('input[name="daterange"]').daterangepicker(
+  {
+    "showDropdowns": true,
+    "autoApply": true,
+    "dateLimit": {
+        "days": 10
+    },
+
+    "locale": {
+        "format": "MM/DD/YYYY",
+        "separator": " - ",
+        "applyLabel": "Apply",
+        "cancelLabel": "Cancel",
+        "fromLabel": "From",
+        "toLabel": "To",
+        "customRangeLabel": "Custom",
+        "weekLabel": "W",
+        "daysOfWeek": [
+            "Su",
+            "Mo",
+            "Tu",
+            "We",
+            "Th",
+            "Fr",
+            "Sa"
+        ],
+        "monthNames": [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"
+        ],
+        "firstDay": 1
+    },
+    "startDate": defaultPastDate,
+    "endDate": today
+  }, 
+  function(start, end, label) {
+        //date fin - date debut
+        var diff = end - start;
+        var days = diff / 1000 / 60 / 60 / 24;
+        var nbJours = Math.round(days);
+        console.log("ha lbadya", start.format('YYYY-MM-DD'));
+        console.log("ha nihaya", end.format('YYYY-MM-DD'));
+
+    //   alert("A new date range was chosen: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+  },
+  alert("A new date range was chosen: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'))
+);
+
+
+        </script>
+
+
+    
+
+ 
+</body>
+</html>

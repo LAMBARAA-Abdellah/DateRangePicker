@@ -26,6 +26,7 @@ var defaultPastDate = new Date(new Date().setDate(today.getDate() - defaultDateL
 let dateStart;
 $('input[name="daterange"]').daterangepicker(
   {
+
     "showDropdowns": true,
     "autoApply": true,
     "dateLimit": {
@@ -33,7 +34,7 @@ $('input[name="daterange"]').daterangepicker(
     },
 
     "locale": {
-        "format": "MM/DD/YYYY",
+        "format": "DD/MM/YYYY",
         "separator": " - ",
         "applyLabel": "Apply",
         "cancelLabel": "Cancel",

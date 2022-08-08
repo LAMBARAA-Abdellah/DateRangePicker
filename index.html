@@ -22,6 +22,13 @@
 var defaultDateLimit = 10;
 var defaultPastDate = new Date(new Date().setDate(today.getDate() - defaultDateLimit));
 
+
+let dateStart;
+
+function start(){
+        console.log("start date :",dateStart);
+    }
+    
 $('input[name="daterange"]').daterangepicker(
   {
     "showDropdowns": true,
@@ -75,10 +82,17 @@ $('input[name="daterange"]').daterangepicker(
         console.log("ha lbadya", start.format('YYYY-MM-DD'));
         console.log("ha nihaya", end.format('YYYY-MM-DD'));
 
-    //   alert("A new date range was chosen: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
-  },
-  alert("A new date range was chosen: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'))
-);
+        dateStart = start.format('YYYY-MM-DD');
+
+        start();
+
+        //   alert("A new date range was chosen: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+    },
+    
+    
+    //   alert("A new date range was chosen: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'))
+    );
+   
 
 
         </script>

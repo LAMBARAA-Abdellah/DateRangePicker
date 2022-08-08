@@ -24,11 +24,6 @@ var defaultPastDate = new Date(new Date().setDate(today.getDate() - defaultDateL
 
 
 let dateStart;
-
-function start(){
-        console.log("start date :",dateStart);
-    }
-    
 $('input[name="daterange"]').daterangepicker(
   {
     "showDropdowns": true,
@@ -84,15 +79,16 @@ $('input[name="daterange"]').daterangepicker(
 
         dateStart = start.format('YYYY-MM-DD');
 
-        start();
-
+        startdateforma();
         //   alert("A new date range was chosen: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
     },
     
     
     //   alert("A new date range was chosen: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'))
     );
-   
+    var startdateforma = () => {
+        console.log("start date :",dateStart);
+    }
 
 
         </script>
